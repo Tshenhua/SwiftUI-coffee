@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct OrderTotalView: View {
+    let total: Double
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack(alignment:.center){
+            Spacer()
+            Text(String(format: "$%.2f", total))
+                .font(.largeTitle)
+                .foregroundColor(.green)
+            Spacer()
+        }
     }
 }
 
 struct OrderTotalView_Previews: PreviewProvider {
     static var previews: some View {
-        OrderTotalView()
+        OrderTotalView(total: 49.89)
     }
 }
